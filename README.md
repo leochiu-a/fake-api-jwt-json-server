@@ -1,25 +1,24 @@
 # JSONServer + JWT Auth
 
-A Fake REST API using json-server with JWT authentication. 
-
-Implemented End-points: login,register
+一個假的 REST API，使用 json-server，並且有 JWT 驗證的功能。
 
 ## Install
 
 ```bash
-$ yarn
-$ yarn start-auth
+yarn
+yarn start-auth
 ```
 
 ## How to login/register?
 
-You can login/register by sending a POST request to
+以下為註冊與登入的 endpoints:
 
 ```
 POST http://localhost:8000/auth/login
 POST http://localhost:8000/auth/register
 ```
-with the following data 
+
+在註冊與登入時，使用以下格式的資料:
 
 ```
 {
@@ -28,7 +27,7 @@ with the following data
 }
 ```
 
-You should receive an access token with the following format 
+在註冊或登入成功後，API 會反回一組 `access_token`:
 
 ```
 {
@@ -36,18 +35,8 @@ You should receive an access token with the following format
 }
 ```
 
-
-You should send this authorization with any request to the protected endpoints
+在請求 `/products` 資料時，必須在 header 加入以下資訊才能通過 JWT 驗證:
 
 ```
 Authorization: Bearer <ACCESS_TOKEN>
 ```
-
-Check out these tutorials:
-
-- [Mocking a REST API Back-End for Your Angular App with JSON-Server and Faker.js](https://www.techiediaries.com/angular-mock-backend)
-- [Building a Fake and JWT Protected REST API with json-server](https://www.techiediaries.com/fake-api-jwt-json-server)
-- [Angular 9 Tutorial: Build an Example App with Angular CLI, Angular Router, HttpClient & Angular Material](https://www.shabang.dev/angular-tutorial-build-an-example-app-with-angular-cli-router-httpclient-and-angular-material/)
-
-
-
