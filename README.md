@@ -7,13 +7,8 @@ Implemented End-points: login,register
 ## Install
 
 ```bash
-$ npm install
-$ npm run start-auth
-```
-
-Might need to run
-```
-npm audit fix
+$ yarn
+$ yarn start-auth
 ```
 
 ## How to login/register?
